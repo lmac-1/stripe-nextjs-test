@@ -1,3 +1,5 @@
+/* Generated from create-next-app */
+
 .main {
   display: flex;
   flex-direction: column;
@@ -40,10 +42,6 @@
 }
 
 .grid {
-  /* display: grid;
-  grid-template-columns: repeat(2, minmax(25%, auto));
-  width: var(--max-width);
-  max-width: 100%; */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -83,11 +81,9 @@
   justify-content: center;
   align-items: center;
   position: relative;
-  padding: 4rem 0;
 }
 
 .center::before {
-  /* background: var(--secondary-glow); */
   border-radius: 50%;
   width: 480px;
   height: 360px;
