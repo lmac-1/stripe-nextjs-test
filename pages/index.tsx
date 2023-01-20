@@ -1,8 +1,7 @@
 import Head from 'next/head';
-import Image from 'next/image';
 import { Inter } from '@next/font/google';
 import styles from '@/styles/Home.module.css';
-import BuyButton from '@/components/BuyButton';
+import Product from '@/components/Product';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -24,36 +23,22 @@ export default function Home() {
         </div>
 
         <div className={styles.grid}>
-          <div>
-            <div className={styles.card}>
-              <Image
-                src="/images/duck.jpg"
-                width={250}
-                height={250}
-                alt="A rubber duck on my desk"
-              />
-
-              <h2 className={inter.className}>Duck</h2>
-              <p className={inter.className}>
-                A beautiful rubber duck to help you with all your debugging
-                needs.
-              </p>
-              <BuyButton priceId="price_1MRieNBbNj5M8qMg2j1Neavt" />
-            </div>
-          </div>
-          <div className={styles.card}>
-            <Image
-              src="/images/mug.jpg"
-              width={250}
-              height={250}
-              alt="A rubber duck on my desk"
-            />
-            <h2 className={inter.className}>Mug</h2>
-            <p className={inter.className}>
-              A pretty boring mug to have your morning coffee with.
-            </p>
-            <BuyButton priceId="price_1MRieuBbNj5M8qMghbiaXD5q" />
-          </div>
+          <Product
+            image="duck.jpg"
+            alt="A rubber duck on my desk"
+            title="Duck"
+            description="A beautiful rubber duck to help you with all your debugging needs."
+            priceId="price_1MRieNBbNj5M8qMg2j1Neavt"
+            inter={inter}
+          />
+          <Product
+            image="mug.jpg"
+            alt="A mug on my desk"
+            title="Mug"
+            description="A pretty boring mug to have your morning coffee with."
+            priceId="price_1MRieuBbNj5M8qMghbiaXD5q"
+            inter={inter}
+          />
         </div>
       </main>
     </>
