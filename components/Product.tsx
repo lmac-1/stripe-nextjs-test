@@ -1,7 +1,5 @@
 import Image from 'next/image';
-import styles from '@/styles/Home.module.css';
 import BuyButton from './BuyButton';
-import { NextFont } from '@next/font';
 
 type ProductProps = {
   image: string;
@@ -9,8 +7,6 @@ type ProductProps = {
   title: string;
   description: string;
   priceId: string;
-  /* todo: check how to properly use custom fonts */
-  inter: NextFont;
 };
 
 export default function Product({
@@ -19,14 +15,20 @@ export default function Product({
   title,
   description,
   priceId,
-  inter,
 }: ProductProps) {
   return (
-    <div className={styles.card}>
-      <Image src={`/images/${image}`} width={250} height={250} alt={alt} />
-      <div className={styles.product}>
-        <h2 className={inter.className}>{title}</h2>
-        <p className={inter.className}>{description}</p>
+    <div className="text-center w-96 md:w-72 flex flex-col mb-10 p-0 md:p-4">
+      <Image
+        src={`/images/${image}`}
+        alt={alt}
+        width="0"
+        height="0"
+        sizes="100vw"
+        className="w-full h-auto"
+      />
+      <div className="my-4">
+        <h2 className="text-xl font-bold mb-3">{title}</h2>
+        <p className="text-slate-500 text-sm">{description}</p>
       </div>
       <BuyButton priceId={priceId} />
     </div>

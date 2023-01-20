@@ -36,8 +36,12 @@ export default function BuyButton({ priceId }: BuyButtonProps) {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <button disabled={loading} type="submit">
+    <form onSubmit={handleSubmit} className="mt-auto">
+      <button
+        className="bg-blue-button hover:bg-blue-button-hover w-full border rounded-md px-4 py-1.5 text-white"
+        disabled={loading}
+        type="submit"
+      >
         Buy
       </button>
     </form>
